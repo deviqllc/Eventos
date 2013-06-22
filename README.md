@@ -1,6 +1,6 @@
 #Eventos
 ######Eventos = events in spanish / Evento = event in spanish.
-Eventos was born out of a weekend experiment. Its an small, simple and extensible kind-of-lazy-pipeline framework for C# MONO and .NET 4+ that allows execution of interchangeable, re-arrangable, reusable and replaceable atomic tasks called Eventos with the minimum amount of code. Its made with reusability and modularity in mind. 
+Eventos was born out of a weekend experiment. Its an small, simple and extensible pseudo-pipeline framework for C# MONO and .NET 4+ that allows execution of interchangeable, re-arrangable, reusable and replaceable atomic tasks called Eventos with the minimum amount of code. Its made with reusability and modularity in mind. 
 
 #### Possible Usages:
 + ETLs, ETLs, ETLs, …
@@ -347,10 +347,11 @@ Again, the Eventos sequence will not be executed until the Start method is calle
 
 ## What's next
 
-- Loops
-- Multi-dimensional and conditional execution plans.
+- Other flow control options: Loops, Conditions, etc...
+- Performance
 - Concurrency (Multi-threading, async?) pending analysis…(for now you can wrap your threading logic around it)
-- Execution Plan Branching
+- Execution Plan Branching (Non-Linear pipeline and parallel pipeline)
 - Execution Plan Monitoring
 - Execution Plan Control
+- More performance
 - ...
