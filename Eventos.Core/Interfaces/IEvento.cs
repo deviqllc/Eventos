@@ -15,4 +15,3 @@ namespace Eventos.Core.Interfaces
 		IEvento<TParameters, TResult> Then(IEvento<TParameters, TResult> Callback);
 	}
 }
-

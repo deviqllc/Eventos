@@ -11,6 +11,3 @@ namespace Eventos.Core
 		}
 	}
 }
-
-
-

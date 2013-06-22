@@ -20,11 +20,6 @@ namespace Eventos.Samples
 		public TestExecutionPlan1() : base("Execution Plan 1")
 		{
 		}
-
-		public void Start(TestCalculationEventoParameters Parameters)
-		{
-			base.start (Parameters);
-		}
 	}
 
 	public class TestExecutionPlan2 : EventoExecutionPlanBase<TestCalculationEventoParameters, TestCalculationEventoResults>
@@ -32,11 +27,6 @@ namespace Eventos.Samples
 		public TestExecutionPlan2() : base("Execution Plan 2")
 		{
 
-		}
-
-		public void Start(TestCalculationEventoParameters Parameters)
-		{
-			base.start (Parameters);
 		}
 	}
 

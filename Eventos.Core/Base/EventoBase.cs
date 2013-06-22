@@ -52,10 +52,10 @@ namespace Eventos.Core.Base
 					return context.ExecutionResults;
 				}
 			}
-			catch(Exception ex)
+			catch
 			{
 				this.State = EventoState.Failed;
-				throw ex;
+				throw;
 			}
 		}
 

@@ -10,28 +10,5 @@ namespace Eventos.Core
 		public EventoExecutionPlan (string Name) : base(Name)
 		{
 		}
-		
-		/// <summary>
-		/// Sets the flow of eventos.
-		/// </summary>
-		/// <param name='eventos'>
-		/// Eventos.
-		/// </param>
-		public void SetSequence(params IEvento<TParameters, TResult>[] Eventos)
-		{
-			base.setSequence(Eventos);
-		}
-		
-		/// <summary>
-		/// Executes current flow.
-		/// </summary>
-		/// <param name='parameters'>
-		/// Parameters.
-		/// </param>
-		public TResult Start(TParameters Parameters = default(TParameters))
-		{
-			return base.start (Parameters);
-		}
 	}
 }
-

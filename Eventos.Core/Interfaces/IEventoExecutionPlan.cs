@@ -10,4 +10,3 @@ namespace Eventos.Core.Interfaces
 		TResult Start(TParameters Parameters = default(TParameters));
 	}
 }
-

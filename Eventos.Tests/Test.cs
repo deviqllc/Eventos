@@ -52,12 +52,7 @@ namespace Eventos.Tests
 				};
 			}, "Populate C Value");
 
-			base.setSequence (getValuesEvento, addValuesEvento, subtractValuesEvento, populateCValueEvento);
-		}
-
-		public TestCalculationEventoResults Start()
-		{
-			return base.start ();
+			base.SetSequence (getValuesEvento, addValuesEvento, subtractValuesEvento, populateCValueEvento);
 		}
 	}
 
@@ -66,11 +61,6 @@ namespace Eventos.Tests
 		public TestExecutionPlan2() : base("Execution Plan 2")
 		{
 
-		}
-
-		public TestCalculationEventoResults Start()
-		{
-			return base.start ();
 		}
 	}
 
