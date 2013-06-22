@@ -24,13 +24,19 @@ namespace Eventos.Core.Base
 		/// </param>
 		protected internal void setSequence(params IEvento<TParameters, TResult>[] Eventos)
 		{
-			int i = 0;
-			this.flow = Eventos.ToList();
-			while (i < (this.Count-1))
-			{
-				this.flow[i].Then (this.flow[i+1]);
-				i++;
-			}
+			flow = Eventos.ToList();
+            IEnumerator<IEvento<TParameters, TResult>> enumerator = Eventos.Cast<IEvento<TParameters, TResult>>().GetEnumerator();
+
+            while (enumerator.MoveNext())
+            {
+                IEvento<TParameters, TResult> currentFlow = enumerator.Current;
+
+                if (enumerator.MoveNext())
+                {
+                    IEvento<TParameters, TResult> nextFlow = enumerator.Current;
+                    currentFlow.Then(nextFlow);
+                }
+            }
 		}
 		
 		/// <summary>
@@ -44,14 +50,16 @@ namespace Eventos.Core.Base
 		/// </exception>
 		protected internal TResult start(TParameters Parameters = default(TParameters))
 		{
-			if (this.Count > 0)
-			{
-				return this.flow[0].Start (Parameters);
-			}
-			else
-			{
-				throw new EmptyExecutionPlanException(this.Name);
-			}
+            IEvento<TParameters, TResult> startFlow = flow.FirstOrDefault();
+
+            if (startFlow == null)
+            {
+                throw new EmptyExecutionPlanException(this.Name);
+            }
+            else
+            {
+                return startFlow.Start(Parameters);
+            }
 		}
 		
 		/// <summary>
